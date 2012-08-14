@@ -1,0 +1,29 @@
+
+
+table{
+	background:orange;
+	border-radius:15px; 
+	border-spacing:0;
+	box-shadow:rgb(110,110,110) 10px 10px 10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:5px;
+	padding-right:5px;
+	border:4px;
+	
+}
+
+tbody tr:nth-child(odd){
+   background:gray;		
+}
+
+tbody tr:nth-child(even){
+	background:brown;		
+}
+
+#box{
+	display:block;
+	width:250px;
+	background:orange;
+	border-radius:25px;
+}
