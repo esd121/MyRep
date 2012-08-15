@@ -3,3 +3,7 @@ https://github.com/christiantusborg/Sharp
 https://github.com/esd121/MyRep
 
 http://jsfiddle.net/C4QVH/
+
+https://github.com/jquery/jquery/
+
+https://developers.google.com/speed/libraries/devguide
