@@ -1,0 +1,90 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://blueimp.github.com/cdn/css/bootstrap.min.css" >
+ 
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('button.grab').on('click', function (event) {
+                grap($(event.target).val());
+            });
+
+            $('button.reset').on('click', function (event) {
+                reset();
+            });
+			
+			$('button.start').on('click', function (event) {
+                $(#example).modal();
+            });
+        });
+
+        function reset() {
+            $.each($('#horses > button'), function (i, item) {
+                $(item).removeClass('btn-danger');
+				$(item).addClass('btn-success');
+            });
+			$(".error").hide();
+        }
+
+        function grap(i){
+            toGrap = i;
+            grabed = false;
+            $.each($('#horses > button'), function (i, item) {
+                if (!$(item).hasClass('btn-danger') && toGrap > 0) {                    
+					$(item).removeClass('btn-success');
+                    $(item).addClass('btn-danger');
+                    toGrap = toGrap - 1;
+                }
+                if (toGrap == 0) {
+                    grabed = true;
+                }
+            });
+
+            if (!grabed) {
+                $(".error").show();
+            }
+        }
+                	
+	</script>
+	
+	<style>
+		.error{
+			display: none;
+			color:red;
+		}
+	</STYLE>
+	
+ </head>
+ 
+ <body>
+	<button value="Start" class="start">Start Game!</button>
+	
+<div id="example" class="modal hide fade in" style="display: none; ">  
+	<div class="modal-header">  
+	<a class="close" data-dismiss="modal">×</a>  
+	<h3>This is a Modal Heading</h3>  
+	</div>  
+	<div class="modal-body">  
+	<h4>Text in a modal</h4>  
+	<p>You can add some text here.</p>                
+	</div>  
+	<div class="modal-footer">  
+	<a href="#" class="btn btn-success">Call to action</a>  
+	<a href="#" class="btn" data-dismiss="modal">Close</a>  
+	</div>  
+</div>
+
+	
+	<div id="idGameContainer" class="modal hide fade in" style="display: none; ">
+		<button value="1" class="grab btn">1</button><button value="2" class="grab btn">2</button><button value="3" class="grab btn">3</button>  <button class="reset btn">reset</button>
+		<p></p>
+		<div class="error">Not that many left!!!</div>
+		<p></p>
+		<div id="horses">
+			<button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button><button class="btn-success">1</button>
+		</div>
+	</div>
+ </body>
+ </html>
+ 
